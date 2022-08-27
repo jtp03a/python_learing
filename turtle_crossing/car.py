@@ -24,7 +24,8 @@ class Car(Turtle):
 
   def move(self):
     for car in self.cars:
-      car.backward(self.move_speed)
+      random_speed_mult = random.randint(1,3)
+      car.backward(self.move_speed * random_speed_mult)
 
   def inc_move(self):
-    self.move_speed *= 1.5
+    self.move_speed *= 1.3
