@@ -7,8 +7,9 @@ DOWN = 270
 LEFT = 180
 RIGHT = 0
 
-class Snake:
+class Snake(Turtle):
   def __init__(self):
+    super().__init__()
     self.snake_body = []
     self.create_snake()
     self.snake_head = self.snake_body[0]
@@ -24,7 +25,6 @@ class Snake:
       new_segment.penup()
       new_segment.goto(position)
       self.snake_body.append(new_segment)
-
 
   def move_snake(self):
     for seg_num in range(len(self.snake_body) - 1, 0, -1):
@@ -48,4 +48,11 @@ class Snake:
 
   def inc_snake(self):
     self.add_segment(self.snake_body[-1].pos())
+
+  def reset(self):
+    for segment in self.snake_body:
+      segment.reset()
+    self.snake_body = []
+    self.create_snake()
+    self.snake_head = self.snake_body[0]
 
