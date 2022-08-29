@@ -14,23 +14,23 @@ s.title("Snake Game")
 s.tracer(0)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 snake_body = []
 current_snake_length = 3
+=======
+t = Snake()
+>>>>>>> d0fefe095dc3a344d5b8846fe016460f17c28a1b
 
-x_pos = 0
+t.create_snake()
 
-for _ in range(current_snake_length):
-  snake_body.append(Snake_Turtle(shape="square", color="white", speed="fastest"))
 
-for segment in snake_body:
-  segment.penup()
-  segment.goto(x_pos, 0)
-  x_pos -= 20
 
-s.update()
+# snake_body = []
+# current_snake_length = 3
 
-snake_is_moving = True
+# x_pos = 0
 
+<<<<<<< HEAD
 while snake_is_moving:
   s.update()
   time.sleep(0.1)
@@ -82,6 +82,8 @@ while running:
 
 # x_pos = 0
 
+=======
+>>>>>>> d0fefe095dc3a344d5b8846fe016460f17c28a1b
 # for _ in range(current_snake_length):
 #   snake_body.append(Snake_Turtle(shape="square", color="white", speed="fastest"))
 
@@ -97,7 +99,10 @@ while running:
 # while snake_is_moving:
 #   s.update()
 #   time.sleep(0.1)
+<<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> d0fefe095dc3a344d5b8846fe016460f17c28a1b
   
 
 

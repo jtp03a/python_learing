@@ -1,9 +1,15 @@
+<<<<<<< HEAD
 # The command that runs the program. Commented out because it is not run when the interpreter command is set
 # run = ["python3", "main.py"]
 # The primary language of the repl. There can be others, though!
 language = "python3"
 # The main file, which will be shown by default in the editor.
 entrypoint = "main.py"
+=======
+# The primary language of the repl. There can be others, though!
+language = "python3"
+entrypoint = "README.md"
+>>>>>>> d0fefe095dc3a344d5b8846fe016460f17c28a1b
 # A list of globs that specify which files and directories should
 # be hidden in the workspace.
 hidden = ["venv", ".config", "**/__pycache__", "**/.mypy_cache", "**/*.pyc"]
@@ -12,6 +18,7 @@ hidden = ["venv", ".config", "**/__pycache__", "**/.mypy_cache", "**/*.pyc"]
 [nix]
 channel = "stable-21_11"
 
+<<<<<<< HEAD
 [gitHubImport]
 requiredFiles = [".replit", "replit.nix", ".config", "venv", "driver.py"]
 
@@ -28,6 +35,8 @@ syntax = "python"
   [languages.python3.languageServer]
   start = ["pylsp"]
 
+=======
+>>>>>>> d0fefe095dc3a344d5b8846fe016460f17c28a1b
 # The command to start the interpreter.
 [interpreter]
   [interpreter.command]
@@ -42,6 +51,7 @@ syntax = "python"
   ]
   env = { LD_LIBRARY_PATH = "$PYTHON_LD_LIBRARY_PATH" }
 
+<<<<<<< HEAD
 # The environment variables needed to correctly start Python and use the
 # package proxy.
 [env]
@@ -51,6 +61,15 @@ PYTHONPATH="${VIRTUAL_ENV}/lib/python3.8/site-packages"
 REPLIT_POETRY_PYPI_REPOSITORY="https://package-proxy.replit.com/pypi/"
 MPLBACKEND="TkAgg"
 POETRY_CACHE_DIR="${HOME}/${REPL_SLUG}/.cache/pypoetry"
+=======
+[env]
+VIRTUAL_ENV = "/home/runner/${REPL_SLUG}/venv"
+PATH = "${VIRTUAL_ENV}/bin"
+PYTHONPATH = "${VIRTUAL_ENV}/lib/python3.10/site-packages"
+REPLIT_POETRY_PYPI_REPOSITORY = "https://package-proxy.replit.com/pypi/"
+MPLBACKEND = "TkAgg"
+POETRY_CACHE_DIR = "${HOME}/${REPL_SLUG}/.cache/pypoetry"
+>>>>>>> d0fefe095dc3a344d5b8846fe016460f17c28a1b
 
 # Enable unit tests. This is only supported for a few languages.
 [unitTest]
@@ -98,10 +117,14 @@ support = true
 
 # Configures the packager.
 [packager]
+<<<<<<< HEAD
 # Search packages in PyPI.
 language = "python3"
 # Never attempt to install `unit_tests`. If there are packages that are being
 # guessed wrongly, add them here.
+=======
+language = "python3"
+>>>>>>> d0fefe095dc3a344d5b8846fe016460f17c28a1b
 ignoredPackages = ["unit_tests"]
 
   [packager.features]
@@ -110,3 +133,20 @@ ignoredPackages = ["unit_tests"]
   packageSearch = true
   # Enable guessing what packages are needed from the code.
   guessImports = true
+<<<<<<< HEAD
+=======
+
+# These are the files that need to be preserved when this 
+# language template is used as the base language template
+# for Python repos imported from GitHub
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix", ".config", "venv"]
+
+[languages]
+
+[languages.python3]
+pattern = "**/*.py"
+
+[languages.python3.languageServer]
+start = "pylsp"
+>>>>>>> d0fefe095dc3a344d5b8846fe016460f17c28a1b

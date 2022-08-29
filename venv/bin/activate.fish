@@ -29,7 +29,11 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
+<<<<<<< HEAD
 set -gx VIRTUAL_ENV "/home/runner/${REPL_SLUG}/venv"
+=======
+set -gx VIRTUAL_ENV "/home/runner/Python/venv"
+>>>>>>> d0fefe095dc3a344d5b8846fe016460f17c28a1b
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

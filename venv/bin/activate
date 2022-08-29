@@ -37,7 +37,11 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
+<<<<<<< HEAD
 VIRTUAL_ENV="/home/runner/${REPL_SLUG}/venv"
+=======
+VIRTUAL_ENV="/home/runner/Python/venv"
+>>>>>>> d0fefe095dc3a344d5b8846fe016460f17c28a1b
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
