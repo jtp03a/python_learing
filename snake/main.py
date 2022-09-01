@@ -1,11 +1,9 @@
 from turtle import Screen
 import time
 from snake import Snake
-<<<<<<< HEAD
-=======
 from food import Food
 from scoreboard import ScoreBoard
->>>>>>> main
+
 
 s = Screen()
 s.setup(width=600, height=600)
@@ -13,13 +11,11 @@ s.bgcolor("black")
 s.title("Snake Game")
 s.tracer(0)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 snake_body = []
 current_snake_length = 3
-=======
+
 t = Snake()
->>>>>>> d0fefe095dc3a344d5b8846fe016460f17c28a1b
+
 
 t.create_snake()
 
@@ -30,11 +26,10 @@ t.create_snake()
 
 # x_pos = 0
 
-<<<<<<< HEAD
+
 while snake_is_moving:
   s.update()
   time.sleep(0.1)
-=======
 snake = Snake()
 food = Food()
 scoreboard = ScoreBoard()
