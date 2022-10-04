@@ -4,11 +4,17 @@ data = pandas.read_csv('nato_phonetic_alphabet.csv')
 
 data_dict = {row.letter:row.code for (index, row) in data.iterrows()}
 
-user_input = input('Type a word: ').upper()
+def make_nato_word():
+  user_input = input('Type a word: ').upper()
+  try:
+    nato_word = [data_dict[letter] for letter in user_input]
+  except KeyError:
+    print('Only letters allowd in the word')
+    make_nato_word()
+  else:
+    print(nato_word)
 
-nato_word = [data_dict[letter] for letter in user_input]
-
-print(nato_word)
+make_nato_word()
 
 # def convert_word(word):
 #   nato_word = [get_nato_letter(letter.upper()) for letter in word]
