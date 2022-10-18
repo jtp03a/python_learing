@@ -7,12 +7,12 @@
 
 import requests
 from datetime import datetime
+import os
 
-MY_LAT = 29.430970
-MY_LONG = -98.769660
+MY_LAT = float(os.environ.get('mylat'))
+MY_LONG = float(os.environ.get('mylon'))
 
 iss_response = requests.get(url='http://api.open-notify.org/iss-now.json')
-# response = requests.get(url='https://api.kanye.rest')
 
 parameters = {
         "lat": MY_LAT,
