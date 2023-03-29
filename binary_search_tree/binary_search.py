@@ -22,8 +22,26 @@ def createOrderedList(uList):
 
 
 def binarySearch (lst, start, end, val): 
-    return -1
+    if(end >= start):
+        mid = (start + end) // 2
+        if (lst[mid] == val):
+            print('found')
+            return mid
+        elif (val > lst[mid]):
+            binarySearch(lst, mid + 1, end, val)
+        else:
+            binarySearch(lst, start, mid - 1, val)
+    else:
+        print('not found')
+        return -1
+
 
 ul = [8, 2, 3, 9, 1, 44, 22, 11, 90, 0]
 
-createOrderedList(ul)
+ol = createOrderedList(ul)
+
+print(ol)
+
+result = binarySearch(ol, 0, len(ol) - 1, 11)
+
+print(str(result))
