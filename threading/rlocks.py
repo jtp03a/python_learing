@@ -1,7 +1,8 @@
-import threading, time, random
+import threading, time, random, logging
 
 # Refer to README.md for the problem instructions
 
+logging.basicConfig(level=logging.DEBUG, format='(%(threadName)-9s) %(message)s',)
 
 class AddThread( threading.Thread ):
     def __init__(self, name, lock):
@@ -10,14 +11,22 @@ class AddThread( threading.Thread ):
         self.lock = lock
     
     def run(self):
+        logging.debug('Waiting for a lock')
         self.lock.acquire()
         r = random.randint(1,3)
         global number
         try:
+            logging.debug('Acquired a lock')
+            logging.debug('First Increment')
             number += 1
+            logging.debug(f'Number is: {number}')
+            logging.debug('Sleeping')
             time.sleep(r)
+            logging.debug('Second Increment')
             number += 1
+            logging.debug(f'Number is {number}')
         finally:
+            logging.debug('Releasing lock')
             self.lock.release()
 
 
@@ -28,14 +37,22 @@ class MultiplyThread( threading.Thread ):
         self.lock = lock
     
     def run(self):
+        logging.debug('Waiting for a lock')
         self.lock.acquire()
         r = random.randint(1,3)
         global number
         try:
+            logging.debug('Acquired a lock')
+            logging.debug('First Multiply')
             number *= 2
+            logging.debug(f'Number is {number}')
+            logging.debug('Sleeping')
             time.sleep(r)
+            logging.debug('Second Multiply')
             number *= 2
+            logging.debug(f'Number is {number}')
         finally:
+            logging.debug('Releasing lock')
             self.lock.release()
 
 
