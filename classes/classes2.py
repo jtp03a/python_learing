@@ -1,13 +1,11 @@
 import math
 
-# Refer to README.md for the problem instructions
-
 class Player:
-    def __init__(self, name):
+    def __init__(self, name, health = 100.0, x_pos = 0.0, y_pos = 0.0):
         self.name = name
-        self.health = 100.0
-        self.x_pos = 0.0
-        self.y_pos = 0.0
+        self.health = health
+        self.x_pos = x_pos
+        self.y_pos = y_pos
         self.dmg_reduc = 0.5
         
     def report_pos(self):
@@ -19,21 +17,19 @@ class Player:
             self.health = 0.0
         else:
             self.health -= dmg_taken
+        
+        if (self.health == 0):
+            print("You are out of hit points!")
     
     def move(self, x_pos, y_pos):
         distance = math.sqrt((x_pos * x_pos) + (y_pos * y_pos))
-        
-        print(distance)
-        
+           
         self.x_pos += x_pos
         self.y_pos += y_pos
         
-        if (y_pos < 0 ):
-            if (distance >= 5):
-                self.reduce_health(distance)
-                if (self.health == 0):
-                    print("Your are out of health!")
-        
+        if (y_pos < -5):
+            self.reduce_health(distance)
+  
         return self.health
         
     
