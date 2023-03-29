@@ -23,12 +23,14 @@ class Player:
     def move(self, x_pos, y_pos):
         distance = math.sqrt((x_pos * x_pos) + (y_pos * y_pos))
         
+        print(distance)
+        
         self.x_pos += x_pos
         self.y_pos += y_pos
         
         if (y_pos < 0 ):
             if (distance >= 5):
-                reduce_health(distance)
+                self.reduce_health(distance)
                 if (self.health == 0):
                     print("Your are out of health!")
         
@@ -36,3 +38,17 @@ class Player:
         
     
 paladin = Player("Jake")
+
+pos = paladin.report_pos()
+
+paladin.reduce_health(50)
+
+curr_hp = paladin.health
+
+print(f'Current hp is: {curr_hp}, Exp: 75.0')
+
+paladin.move(125, -125)
+
+print(f'Current hp is: {paladin.health}')
+
+print(paladin.report_pos())
