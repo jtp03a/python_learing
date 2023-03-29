@@ -11,9 +11,21 @@ def add_data(data):
 database = []
 threads = []
 
-for i in range(4):
-    t = Thread(target=add_data, args=(i,))
-    threads.append(t)
-    t.start()
+
+t1 = Thread(target=add_data, args=(1,))
+threads.append(t1)
+t1.start()
+
+t2 = Thread(target=add_data, args=(2,))
+threads.append(t2)
+t2.start()
+
+t3 = Thread(target=add_data, args=(2,))
+threads.append(t3)
+t3.start()
+
+t4 = Thread(target=add_data, args=(3,))
+threads.append(t4)
+t4.start()
     
 print(database)
